@@ -1,0 +1,16 @@
+server:
+  port: 8762
+
+spring:
+  application:
+    name: service-hi
+  security:
+    user:
+      name: admin
+      password: admin
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8761/eureka/
